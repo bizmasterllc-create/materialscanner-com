@@ -1,257 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bizsmart LLC — Material Scanner</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0d1117;
-      --surface: #161b22;
-      --border: #30363d;
-      --accent: #3b82f6;
-      --accent-light: #60a5fa;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --radius: 12px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* ── Header ── */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-    }
-    .logo span { font-weight: 700; font-size: 1.1rem; }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--text); }
-
-    /* ── Hero ── */
-    .hero {
-      max-width: 780px;
-      margin: 6rem auto 4rem;
-      padding: 0 2rem;
-      text-align: center;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(59,130,246,.15);
-      color: var(--accent-light);
-      border: 1px solid rgba(59,130,246,.35);
-      border-radius: 100px;
-      padding: 0.3rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      background: linear-gradient(135deg, #e6edf3 30%, #8b949e 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.75rem 2rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn:hover { background: var(--accent-light); transform: translateY(-1px); }
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      margin-left: 1rem;
-    }
-    .btn-ghost:hover { background: var(--surface); transform: translateY(-1px); }
-
-    /* ── Cards ── */
-    .cards {
-      max-width: 1100px;
-      margin: 0 auto 5rem;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-    }
-    .card-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .card h3 { font-size: 1.05rem; margin-bottom: .5rem; }
-    .card p  { font-size: .9rem; color: var(--muted); }
-
-    /* ── Company section ── */
-    .company {
-      max-width: 780px;
-      margin: 0 auto 5rem;
-      padding: 0 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    .company-inner { padding: 2.5rem; }
-    .company h2  { font-size: 1.4rem; margin-bottom: 1rem; }
-    .company p   { color: var(--muted); font-size: .95rem; margin-bottom: .75rem; }
-    .company p:last-child { margin-bottom: 0; }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--text); }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: .5rem; }
-
-    @media (max-width: 500px) {
-      header { flex-direction: column; gap: .75rem; }
-      nav a:first-child { margin-left: 0; }
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Material Scanner — Stop Guessing Material Prices on the Job Site</title>
+<meta name="description" content="A private beta for contractors, plumbers and electricians. Exact material lists, permitted supplier quotes, honest travel estimates and native branch directions. No invented prices.">
+<link rel="canonical" href="https://materialscanner.com/">
+<meta property="og:title" content="Stop Guessing Material Prices on the Job Site."><meta property="og:description" content="Build the right material list. Keep pricing honest. Plan the branch run. Private beta for US trades."><meta property="og:type" content="website"><meta property="og:url" content="https://materialscanner.com/"><meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23F59E0B%22%2F%3E%3Cpath%20d%3D%22M8%2013V8h5m6%200h5v5M8%2019v5h5m6%200h5v-5M13%2013v6m3-6v6m3-6v6%22%20fill%3D%22none%22%20stroke%3D%22%230F172A%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#0F172A"><link rel="stylesheet" href="/assets/landing.css">
 </head>
-<body>
-
-  <!-- ── Header ── -->
-  <header>
-    <a href="/" class="logo">
-      <div class="logo-icon">🔬</div>
-      <span>Material Scanner</span>
-    </a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
-
-  <!-- ── Hero ── -->
-  <main>
-    <section class="hero">
-      <div class="badge">Mobile App &middot; Coming Soon</div>
-      <h1>Identify Any Material, Instantly</h1>
-      <p>
-        Material Scanner is a mobile app by <strong style="color:var(--text)">Bizsmart LLC</strong>
-        that lets you scan everyday materials — wood, metal, fabric, and more — and receive
-        instant, data-backed identification results.
-      </p>
-      <a href="support.html" class="btn">Get Support</a>
-      <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
-    </section>
-
-    <!-- ── Feature cards ── -->
-    <section class="cards" id="about">
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>iOS &amp; Android</h3>
-        <p>Built with React Native and Expo for a smooth experience on both platforms.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔎</div>
-        <h3>Instant Identification</h3>
-        <p>Scan a material and receive confident identification results within seconds.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>Privacy First</h3>
-        <p>Your scans are not stored permanently. We collect only what is needed. See our <a href="privacy.html" style="color:var(--accent-light)">Privacy Policy</a>.</p>
-      </div>
-    </section>
-
-    <!-- ── Company info ── -->
-    <section class="company">
-      <div class="company-inner">
-        <h2>About Bizsmart LLC</h2>
-        <p>
-          Bizsmart LLC is a US-registered limited liability company that develops and publishes
-          the Material Scanner app. We are headquartered in the United States.
-        </p>
-        <p>
-          Material Scanner is currently in development and will be available on the Apple App
-          Store and Google Play Store.
-        </p>
-        <p>
-          For support or general enquiries, please visit our
-          <a href="support.html" style="color:var(--accent-light)">support page</a> or
-          email <a href="mailto:hello@materialscanner.com" style="color:var(--accent-light)">hello@materialscanner.com</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <!-- ── Footer ── -->
-  <footer>
-    <p>&copy; 2026 Bizsmart LLC. All rights reserved.</p>
-    <p>Contact: <a href="mailto:hello@materialscanner.com">hello@materialscanner.com</a></p>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
-      <a href="support.html">Support</a>
-      <a href="mailto:hello@materialscanner.com">Contact</a>
-    </div>
-    <p style="margin-top: .75rem; font-size: .75rem; opacity: .7;">Patent Pending</p>
-  </footer>
-
-</body>
-</html>
+<body class="bg-night font-sans text-white antialiased">
+<a href="#main" class="fixed -top-24 left-4 z-50 rounded-lg bg-safety px-5 py-3 font-bold text-night focus:top-4">Skip to content</a>
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true"><defs>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="route" viewBox="0 0 24 24"><circle cx="5" cy="18" r="3"/><path d="M8 18h8a4 4 0 0 0 0-8h-5a4 4 0 0 1 0-8h2"/><path d="m16 2 4 3-4 3"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+<symbol id="scan" viewBox="0 0 24 24"><path d="M3 8V3h5m8 0h5v5M3 16v5h5m8 0h5v-5M7 7v10m3-10v10m4-10v10m3-10v10"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2c2 3 3 4 6 6l2-2 5 3-2 4c-7 0-16-9-16-16l4-2Z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+</defs></svg>
+<header class="sticky top-0 z-30 border-b border-line bg-night/95 backdrop-blur-md">
+<div class="page-wrap flex min-h-20 items-center justify-between gap-5">
+<a href="/" aria-label="Material Scanner home" class="flex items-center gap-3 text-lg font-bold tracking-tight"><span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-safety text-night"><svg width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><use href="#scan"/></svg></span><span>Material<wbr><span class="text-safety">Scanner</span></span></a>
+<nav aria-label="Main" class="hidden items-center gap-7 text-sm font-medium text-copy md:flex"><a href="#how-it-works" class="hover:text-white">How it works</a><a href="#integrity" class="hover:text-white">Our promise</a><a href="#beta" class="cta cta-primary">TestFlight Beta (iOS)<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#arrow"/></svg></a></nav>
+<details class="relative md:hidden"><summary class="cursor-pointer rounded-lg border border-line px-3 py-2 text-sm font-semibold">Menu <span aria-hidden="true" class="ml-2 text-safety">+</span></summary><nav class="menu-panel" aria-label="Mobile main"><a href="#how-it-works">How it works</a><a href="#integrity">Our promise</a><a href="#beta" class="font-semibold text-safety">TestFlight Beta (iOS)</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<section class="page-wrap grid items-center gap-14 py-16 lg:grid-cols-[1.12fr_1fr] lg:gap-20 lg:py-24" aria-labelledby="hero-heading">
+<div><p class="kicker mb-7 flex items-center gap-3 text-safety"><span class="h-2 w-2 rounded-full bg-safety" aria-hidden="true"></span> Built for the job site</p>
+<h1 id="hero-heading" class="hero-title"><span class="block">Stop Guessing</span> <span class="block text-safety">Material Prices</span> <span class="block">on the Job Site.</span></h1>
+<p class="mt-7 max-w-xl text-base leading-relaxed text-copy sm:text-lg">Material Scanner helps contractors, plumbers, and electricians build exact material lists, compare permitted supplier quotes, and open branch directions—backed by strict data honesty.</p>
+<div class="mt-9 flex flex-wrap gap-3"><a class="cta cta-primary" href="#beta">TestFlight Beta (iOS)<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#arrow"/></svg></a><a class="cta cta-secondary" href="#how-it-works">Learn More</a></div>
+<p class="mt-4 text-xs leading-relaxed text-copy">Private iOS beta · Request access below. No public invitation link yet.</p>
+<div class="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-6 text-xs font-medium text-copy"><span>For contractors</span><span>For plumbers</span><span>For electricians</span></div>
+</div>
+<div class="relative mx-auto w-full max-w-lg rounded-2xl border border-line bg-charcoal p-4 shadow-2xl sm:p-6" aria-label="Illustrative material list and supplier fallback display, not live supplier data">
+<div class="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-line pb-4"><span class="kicker text-copy">The supply run</span><span class="rounded border border-safety/30 bg-safety/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-safety">Illustrative display</span></div>
+<div class="mb-4 rounded-xl bg-night p-5"><p class="kicker mb-3 text-safety">01 / Your material list</p><p class="font-semibold">Get the exact parts right.</p><div class="mt-4 flex justify-between gap-4 border-t border-line pt-3 text-sm text-copy"><span>½-inch copper elbow</span><span class="whitespace-nowrap font-mono">12 each</span></div><div class="mt-3 flex justify-between gap-4 text-sm text-copy"><span>¾-inch isolation valve</span><span class="whitespace-nowrap font-mono">2 each</span></div></div>
+<div class="example-grid rounded-xl border border-line bg-night p-5"><div class="flex items-center justify-between gap-3"><p class="kicker text-safety">02 / Nearby branch</p><svg class="h-5 w-5 text-copy" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><use href="#pin"/></svg></div><p class="mt-4 text-xl font-semibold tracking-tight">Local trade counter</p>
+<div class="my-5 rounded-lg border border-safety/30 bg-safety/10 p-4"><div class="flex items-center gap-2 text-sm font-semibold text-safety"><svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><use href="#shield"/></svg>Price unavailable</div><p class="mt-2 text-sm text-copy">Contact Branch for Quote</p></div>
+<div class="grid grid-cols-2 gap-3 text-sm"><div><p class="text-xs text-copy">Straight-line distance</p><p class="mt-1 font-mono text-lg font-semibold">5.8 mi</p></div><div><p class="text-xs text-copy">Time at 25 mph</p><p class="mt-1 font-mono text-lg font-semibold">≈ 14 min</p></div></div>
+<p class="mt-4 text-xs text-copy">Stock unknown · Confirm before travelling</p>
+<div class="mt-5 grid grid-cols-2 gap-3 text-center text-xs font-semibold"><span class="flex min-h-11 items-center justify-center gap-2 rounded-lg border border-line bg-charcoal"><svg class="h-4 w-4 text-safety" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><use href="#phone"/></svg>Call Branch</span><span class="flex min-h-11 items-center justify-center gap-2 rounded-lg bg-safety text-night"><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><use href="#route"/></svg>Get Directions</span></div>
+</div><p class="mt-4 text-center text-[11px] leading-relaxed text-copy">An example of the honest fallback. Not a live feed or a road ETA.</p>
+</div></section>
+<section id="integrity" class="border-y border-safety/25 bg-safety/5 py-8" aria-labelledby="integrity-heading"><div class="page-wrap flex items-start gap-4 sm:gap-6"><div class="feature-icon shrink-0"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#shield"/></svg></div><div><h2 id="integrity-heading" class="text-base font-bold text-safety sm:text-lg">100% Data Honesty Guarantee</h2><p class="mt-2 max-w-4xl text-sm leading-relaxed text-copy sm:text-base">If a local yard doesn’t provide verified pricing, we don’t guess. You get straight-line distance, fuel and time estimates, plus direct branch contact and native map links.</p></div></div></section>
+<section id="how-it-works" class="page-wrap py-20 lg:py-24" aria-labelledby="features-heading"><div class="mb-10 max-w-2xl"><p class="kicker mb-4 text-safety">Four pillars. One practical supply run.</p><h2 id="features-heading" class="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">Know what’s verified.<br>Keep the job moving.</h2><p class="mt-5 text-base leading-relaxed text-copy">Clear evidence, useful journey guidance, and fewer assumptions between your material list and the trade counter.</p></div>
+<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+<article class="feature-card"><div class="feature-icon"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#shield"/></svg></div><h3>The Evidence Contract <span class="block text-safety">Zero Fake Pricing</span></h3><p>Every price keeps its source and date. Unverified or missing material prices cannot become a price winner. Unknown stays unknown.</p><p class="!mt-5 text-xs !text-safety">Automatic live API offers are planned; the beta uses permitted private quotes.</p></article>
+<article class="feature-card"><div class="feature-icon"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#route"/></svg></div><h3>Job-to-Merchant Routing</h3><p>One tap hands the branch location to Apple Maps on iOS or your compatible map app on Android for road directions.</p><p class="!mt-5 text-xs !text-safety">Planning estimates stay separate from your map app’s road journey.</p></article>
+<article class="feature-card"><div class="feature-icon"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#clock"/></svg></div><h3>Stock &amp; Price Expiry Protection</h3><p>Stale evidence and known stock shortages withdraw price-comparison and savings claims. A saved price does not confirm current stock.</p><p class="!mt-5 text-xs !text-safety">Recheck the exact branch, product and quantity before buying.</p></article>
+<article class="feature-card border-dashed"><div class="flex items-center justify-between gap-2"><div class="feature-icon"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#scan"/></svg></div><span class="rounded border border-line px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-copy">Planned</span></div><h3>Instant Barcode &amp; SKU Scan</h3><p>The goal: point your camera at a barcode to find canonical specifications, pack sizes and branch availability.</p><p class="!mt-5 text-xs !text-safety">Camera/barcode scanning is not available in the current beta.</p></article>
+</div></section>
+<section class="border-y border-line bg-charcoal/40 py-14"><div class="page-wrap grid gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-20"><div><p class="kicker mb-4 text-safety">The beta today</p><h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">Useful on the job.<br>Honest about the gaps.</h2></div><div class="grid gap-6 sm:grid-cols-2"><div><h3 class="mb-3 text-sm font-semibold text-white">Start with your material list</h3><p class="text-sm leading-relaxed text-copy">Choose exact materials, units and quantities. Add supplier quotes you have permission to use, and plan the branch run.</p></div><div><h3 class="mb-3 text-sm font-semibold text-white">The next step needs real evidence</h3><p class="text-sm leading-relaxed text-copy">Instant SKU scanning and automatic verified live supplier pricing are planned. Supplier integrations and current stock coverage are not connected yet.</p></div></div></div></section>
+<section id="beta" class="page-wrap py-20 lg:py-24" aria-labelledby="beta-heading"><div class="rounded-2xl border border-line bg-charcoal px-6 py-10 sm:p-12 lg:flex lg:items-center lg:justify-between lg:gap-12"><div class="max-w-2xl"><p class="kicker mb-4 text-safety">For people who buy the materials</p><h2 id="beta-heading" class="text-3xl font-semibold tracking-tight sm:text-4xl">Help test a better supply run.</h2><p class="mt-5 text-base leading-relaxed text-copy">We’re preparing a small US trades beta. Tell us your trade and the jobs you buy materials for. iOS TestFlight access is arranged individually; no public invitation link is available yet.</p></div><div class="mt-8 shrink-0 lg:mt-0"><a class="cta cta-primary" href="mailto:hello@materialscanner.com?subject=Material%20Scanner%20iOS%20beta%20access">Request beta access<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#arrow"/></svg></a><p class="mt-3 text-xs text-copy">No payment. No guaranteed invitation.</p></div></div></section>
+</main>
+<footer id="about" class="border-t border-line py-10"><div class="page-wrap flex flex-col justify-between gap-7 sm:flex-row"><div><p class="text-lg font-bold tracking-tight">Material<span class="text-safety">Scanner</span></p><p class="mt-3 max-w-md text-xs leading-relaxed text-copy">Built by Bizsmart LLC for US tradespeople.<br>Pre-release product. Confirm price and availability before travelling.</p><p class="mt-4 text-xs text-copy">© 2026 Bizsmart LLC</p></div><nav aria-label="Support and legal" class="flex flex-wrap items-start gap-x-6 gap-y-4 text-sm text-copy"><a href="/support.html" class="hover:text-white">Support</a><a href="/privacy.html" class="hover:text-white">Privacy</a><a href="/terms.html" class="hover:text-white">Terms</a><a href="mailto:hello@materialscanner.com" class="hover:text-white">Contact</a></nav></div></footer>
+<script>
+const menu=document.querySelector('header details');
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary').focus();}});
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.open=false;}));
+</script>
+</body></html>
